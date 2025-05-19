@@ -93,4 +93,4 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 Guilherme de Souza Ramos Cardoso - guilhermesouza1302@gmail.com
 
-Link do Projeto: [https://github.com/seu-usuario/sumaria](https://github.com/gilermeS/Video-summarizer)
+Link do Projeto: [SumarIA](https://github.com/gilermeS/Video-summarizer)
