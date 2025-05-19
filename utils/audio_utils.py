@@ -2,22 +2,39 @@
 import yt_dlp
 import whisper
 from streamlit import secrets
-# import config
 
 
-def download_youtube_audio(url, output_path="audio.mp3"):
 
-	ydl_opts = {
-		'format': 'bestaudio/best',
-		'postprocessors': [{
-			'key': 'FFmpegExtractAudio',
-			'preferredcodec': 'mp3',
-			'preferredquality': '192',
-		}],
-		'outtmpl': output_path.replace('.mp3', '.%(ext)s'),
-		'quiet': True,
-		'ffmpeg_location': secrets.ff_path,
-	}
+def download_youtube_audio(url, output_path="audio.mp3", local=False):
+
+	if local:
+		ydl_opts = {
+			'format': 'bestaudio/best',
+			'postprocessors': [{
+				'key': 'FFmpegExtractAudio',
+				'preferredcodec': 'mp3',
+				'preferredquality': '192',
+			}],
+			'outtmpl': output_path.replace('.mp3', '.%(ext)s'),
+			'quiet': True,
+			'ffmpeg_location': secrets.ff_path,
+		}
+
+
+	else:
+
+		ydl_opts = {
+			'format': 'bestaudio/best',
+			'postprocessors': [{
+				'key': 'FFmpegExtractAudio',
+				'preferredcodec': 'mp3',
+				'preferredquality': '192',
+			}],
+			'outtmpl': output_path.replace('.mp3', '.%(ext)s'),
+			'quiet': True,
+		}
+
+
 
 	with yt_dlp.YoutubeDL(ydl_opts) as ydl:
 
@@ -31,25 +48,6 @@ def download_youtube_audio(url, output_path="audio.mp3"):
 
 
 model = whisper.load_model("base")
-
-# result = model.transcribe("audio.mp3", fp16=False)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
