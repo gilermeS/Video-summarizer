@@ -6,7 +6,7 @@ __pycache__/
 
 structure.txt
 
-.devcontainer
+# .devcontainer
 
 audio.mp3
 
