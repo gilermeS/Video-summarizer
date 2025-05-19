@@ -48,7 +48,7 @@ if video_url:
                 transcribed = audio_utils.model.transcribe(audio, fp16=False)["text"]
             
             st.subheader("📝 Transcrição")
-            st.text_area("Texto transcrito:", transcribed, height=200)
+            st.text_area("Texto transcrito:", api_utils.prettify(transcribed), height=200)
 
 
 
