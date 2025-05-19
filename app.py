@@ -23,7 +23,7 @@ st.info('Vídeos longos demoram mais e, como o resumo é baseado na transcriçã
 
 # Sidebar (configurações)
 with st.sidebar:
-    st.header("Configurações")
+    st.header("Configurações adicionais :gear: :star2:")
     deepseek_key = st.text_input("Chave da OpenRouter API (opcional)", type="password")
 
 
@@ -48,15 +48,14 @@ if video_url:
         st.text_area("Texto transcrito:", transcribed, height=200)
 
 
-        if deepseek_key:
+        # Resumo com DeepSeek
+        with st.spinner("Gerando resumo..."):
 
-            # Resumo com DeepSeek
-                with st.spinner("Gerando resumo..."):
+            summary = api_utils.generate_summary(transcribed)
+        
 
-                    summary = api_utils.generate_summary(transcribed)
-                
-                st.subheader("🔍 Resumo")
-                st.write(summary)
+        st.subheader("🔍 Resumo")
+        st.write(summary)
         
         st.balloons()
 
