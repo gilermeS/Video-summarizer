@@ -11,3 +11,4 @@ structure.txt
 audio.mp3
 
 
+.streamlit/secrets.toml

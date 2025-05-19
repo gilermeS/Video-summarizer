@@ -1,8 +1,9 @@
 import requests
-import config
+# import config
+from streamlit import secrets
 
 
-api_key = config.deepseek_key
+api_key = secrets.deepseek_key
 
 
 def generate_summary(text):

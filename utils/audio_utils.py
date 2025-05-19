@@ -1,7 +1,8 @@
 
 import yt_dlp
 import whisper
-import config
+from streamlit import secrets
+# import config
 
 
 def download_youtube_audio(url, output_path="audio.mp3"):
@@ -15,7 +16,7 @@ def download_youtube_audio(url, output_path="audio.mp3"):
 		}],
 		'outtmpl': output_path.replace('.mp3', '.%(ext)s'),
 		'quiet': True,
-		'ffmpeg_location': config.ff_path,
+		'ffmpeg_location': secrets.ff_path,
 	}
 
 	with yt_dlp.YoutubeDL(ydl_opts) as ydl:
