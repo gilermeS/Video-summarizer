@@ -5,7 +5,7 @@ import streamlit as st
 
 
 
-st.set_page_config(page_title="SumarIA", page_icon="🤖")
+st.set_page_config(page_title="SumarIA", page_icon="🤖", initial_sidebar_state='collapsed')
 
 
 
@@ -45,10 +45,10 @@ if video_url:
         with col1:
             # Transcrição com Whisper
             with st.spinner("Transcrevendo áudio..."):
-                transcribed = audio_utils.model.transcribe(audio, fp16=False)["text"]
+                transcribed = api_utils.prettify(audio_utils.model.transcribe(audio, fp16=False)["text"])
             
             st.subheader("📝 Transcrição")
-            st.text_area("Texto transcrito:", api_utils.prettify(transcribed), height=200)
+            st.text_area("Texto transcrito:", transcribed, height=200)
 
 
 
