@@ -32,7 +32,7 @@ with st.sidebar:
 video_url = st.text_input("Cole a URL do YouTube:", key='url_input')
 
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(2, gap='medium')
 
 
 
