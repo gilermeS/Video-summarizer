@@ -19,7 +19,7 @@ def generate_summary(text):
     data = {
         "model": "deepseek/deepseek-chat-v3-0324:free",
         "messages": [
-            {"role": "system", "content": "Você é um assistente útil que resume os textos fornecidos em bullet points de até 2 linhas. O seu limite de bullet points é 10. Evite ao máximo se aproximar e ultrapassar esse limite."},
+            {"role": "system", "content": "Você é um assistente útil que resume os textos fornecidos em bullet points de até 2 linhas. O seu limite de bullet points é 20. Evite ao máximo se aproximar e ultrapassar esse limite."},
             {"role": "user", "content": text}
         ]
     }
@@ -38,8 +38,6 @@ def generate_summary(text):
     else:
         
         return "Erro:", response.status_code, response.text
-
-
 
 
 

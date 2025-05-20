@@ -47,7 +47,7 @@ def download_youtube_audio(url, output_path="audio.mp3", local=False):
 
 
 
-model = whisper.load_model("base")
+model = whisper.load_model("tiny")
 
 
 
